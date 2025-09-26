@@ -1,31 +1,33 @@
-# EXPERIMENT 03: CONVOLUTIONAL DEEP NEURAL NETWORK FOR DIGIT CLASSIFICATION
-## AIM:
-To Develop a convolutional deep neural network for digit classification and to verify the response for scanned handwritten images.
-## PROBLEM STATEMENT AND DATASET:
-Problem Statement:<br/>
-The task at hand involves developing a Convolutional Neural Network (CNN) that can accurately classify handwritten digits ranging from 0 to 9. This CNN should be capable of processing scanned images of handwritten digits, even those not included in the standard dataset.
+# Deep-Learning-Exp3
 
-Dataset:<br/>
-The MNIST dataset is widely recognized as a foundational resource in both machine learning and computer vision. It consists of grayscale images measuring 28x28 pixels, each depicting a handwritten digit from 0 to 9. The dataset includes 60,000 training images and 10,000 test images, meticulously labeled for model evaluation. Grayscale representations of these images range from 0 to 255, with 0 representing black and 255 representing white. MNIST serves as a benchmark for assessing various machine learning models, particularly for digit recognition tasks. By utilizing MNIST, we aim to develop and evaluate a specialized CNN for digit classification while also testing its ability to generalize to real-world handwritten images not present in the dataset.
+**DL-Convolutional Deep Neural Network for Image Classification**
 
-## NEURAL NETWORK MODEL
-<img width="1035" height="580" alt="image" src="https://github.com/user-attachments/assets/48dd43d3-653f-46b5-8139-c8abf1c7b54d" />
+**AIM**
 
-## DESIGN STEPS
-### STEP 1:
-Preprocess the MNIST dataset by scaling the pixel values to the range [0, 1] and converting labels to one-hot encoded format.
-### STEP 2:
-Build a convolutional neural network (CNN) model with specified architecture using TensorFlow Keras.
-### STEP 3:
-Compile the model with categorical cross-entropy loss function and the Adam optimizer.
-### STEP 4:
-Train the compiled model on the preprocessed training data for 5 epochs with a batch size of 64.
-### STEP 5:
-Evaluate the trained model's performance on the test set by plotting training/validation metrics and generating a confusion matrix and classification report. Additionally, make predictions on sample images to demonstrate model inference.
+To develop a convolutional neural network (CNN) classification model for the given dataset.
 
-## PROGRAM:
-### Name: Supraja B
-### Register Number: 2305002026
+**THEORY**
+
+The MNIST dataset consists of 70,000 grayscale images of handwritten digits (0-9), each of size 28×28 pixels. The task is to classify these images into their respective digit categories. CNNs are particularly well-suited for image classification tasks as they can automatically learn spatial hierarchies of features through convolutional layers, pooling layers, and fully connected layers.
+
+**Neural Network Model**
+
+<img width="815" height="456" alt="image" src="https://github.com/user-attachments/assets/3152d664-c5f5-43fa-8183-54f3975a1fbf" />
+
+**DESIGN STEPS**
+
+STEP 1: Preprocess the MNIST dataset by scaling the pixel values to the range [0, 1] and converting labels to one-hot encoded format.
+
+STEP 2: Build a convolutional neural network (CNN) model with specified architecture using TensorFlow Keras.
+
+STEP 3: Compile the model with categorical cross-entropy loss function and the Adam optimizer.
+
+STEP 4: Train the compiled model on the preprocessed training data for 5 epochs with a batch size of 64.
+
+STEP 5: Evaluate the trained model's performance on the test set by plotting training/validation metrics and generating a confusion matrix and classification report. Additionally, make predictions on sample images to demonstrate model inference.
+
+**PROGRAM**
+
 ```python
 import numpy as np
 from tensorflow import keras
@@ -125,33 +127,62 @@ print(x_single_prediction1)
 plt.imshow(img_28_gray_inverted_scaled1.reshape(28,28),cmap='gray')
 ```
 
-## OUTPUT:
-### Training Data:
-<img width="1035" height="193" alt="image" src="https://github.com/user-attachments/assets/49d9bb63-edce-4e32-b78a-a1599ad89bd4" />
 
-### Training Loss, Validation Loss Vs Iteration Plot:
-<img width="929" height="667" alt="image" src="https://github.com/user-attachments/assets/c98e8b2b-df21-4375-b00f-55eaf0ee3b1a" />
+Name: SUPRAJA B
 
-<img width="910" height="678" alt="image" src="https://github.com/user-attachments/assets/395eab0a-d5ee-4d7d-b246-8b8e663b1f8c" />
+Register Number: 2305002026
+
+class CNNClassifier(nn.Module):
+   
+    def __init__(self, input_size):
+       
+        super(CNNClassifier, self).__init__()
+       
+        #Include your code here
+
+    def forward(self, x):
+       
+        #Include your code here
+
+       ** # Initialize the Model, Loss Function, and Optimizer**
+  
+       model =
+  
+       criterion =
+  
+       optimizer =
+
+       def train_model(model, train_loadr, num_epochs=10):
+   
+      #Include your code here
+
+**OUTPUT**
+
+**Training Loss per Epoch**
+
+<img width="815" height="152" alt="image" src="https://github.com/user-attachments/assets/b22d1fc9-4c8a-4b96-a673-ee231b088620" />
 
 
+**Confusion Matrix**
+
+<img width="816" height="441" alt="image" src="https://github.com/user-attachments/assets/452c01a9-8cee-4b67-a88f-835cbf8e757e" />
 
 
-### Classification Report:
-<img width="670" height="285" alt="image" src="https://github.com/user-attachments/assets/77fb6f6c-550b-42fd-9296-a3a070a47ea7" />
+**Classification Report**
 
-### Confusion Matrix:
-<img width="819" height="441" alt="image" src="https://github.com/user-attachments/assets/58d7d727-8683-4f98-a1a4-1f021c6e96ab" />
+<img width="672" height="283" alt="image" src="https://github.com/user-attachments/assets/c6da6baa-3617-4c5c-a0ad-ef10fe401d5a" />
 
-### New Sample Data Prediction:
-<img width="760" height="674" alt="image" src="https://github.com/user-attachments/assets/663ec5a1-a026-44a3-a454-b6d1b3cb6e56" />
-<img width="726" height="698" alt="image" src="https://github.com/user-attachments/assets/592c21c8-9625-4cfe-b763-d431448f45c9" />
-<img width="877" height="622" alt="image" src="https://github.com/user-attachments/assets/ece4ca0c-9fe0-45c7-88c5-4cb304d894aa" />
-<img width="673" height="692" alt="image" src="https://github.com/user-attachments/assets/7a135453-283d-41ea-92dd-028db4d93d43" />
+**New Sample Data Prediction**
+
+<img width="760" height="683" alt="image" src="https://github.com/user-attachments/assets/07f5fe74-c385-4b2c-930f-4e2b7423cdb7" />
+
+<img width="729" height="696" alt="image" src="https://github.com/user-attachments/assets/321568b7-feae-46cf-9e8a-1cc4fc790b9f" />
+
+<img width="816" height="574" alt="image" src="https://github.com/user-attachments/assets/972ae2fd-6541-4d76-a5f9-eda62d64c497" />
+
+<img width="676" height="694" alt="image" src="https://github.com/user-attachments/assets/395e3a9e-0f24-447e-b00a-468bb1f7dfde" />
 
 
+**RESULT**
 
-
-
-## RESULT:
 Thus, a convolutional deep neural network for digit classification and to verify the response for scanned handwritten images is developed successfully.
