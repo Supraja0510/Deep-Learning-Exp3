@@ -26,6 +26,10 @@ STEP 4: Train the compiled model on the preprocessed training data for 5 epochs 
 
 STEP 5: Evaluate the trained model's performance on the test set by plotting training/validation metrics and generating a confusion matrix and classification report. Additionally, make predictions on sample images to demonstrate model inference.
 
+Name: SUPRAJA B
+
+Register Number: 2305002026
+
 **PROGRAM**
 
 ```python
@@ -133,13 +137,6 @@ x_single_prediction = np.argmax(model.predict(img_28_gray_inverted_scaled.reshap
 
 print(x_single_prediction)
 ```
-
-
-Name: SUPRAJA B
-
-Register Number: 2305002026
-
-
 
 **OUTPUT**
 
